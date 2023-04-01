@@ -1,0 +1,72 @@
+[1]. SELECT DISTINCT Job FROM emp_info;
+
+[2].
+--> SELECT * FROM emp_info ORDER BY Deptno ASC
+--> SELECT * FROM emp_info ORDER BY Deptno DESC
+
+[3]. SELECT DISTINCT Job FROM emp_info ORDER BY Job DESC
+
+[4]. SELECT * FROM emp_info WHERE Hiredate(1981-01-01);	
+
+[5]. SELECT empno,Emp_name,Sal,Sal/30,12*Sal FROM emp_info ORDER BY Sal ASC
+
+[6]. SELECT empno,Emp_name,Sal FROM emp_info WHERE Mgr='7369'
+
+[7]. SELECT * FROM emp_info WHERE Comm>Sal
+
+[8]. SELECT * FROM emp_info WHERE job='Clerk' OR job='Analyst' ORDER BY job DESC
+
+[9]. SELECT Emp_name FROM emp_info WHERE 12*Sal BETWEEN 22000 AND 45000
+
+[10]. SELECT Emp_name FROM emp_info WHERE Emp_name LIKE 'S%' AND length(Emp_name) = 5
+
+[11]. select * from emp_info where empno not like '78%'
+
+[12]. select * from emp_info where Deptno='20' and Job ='Clerk';
+
+[13].
+-->
+
+[14]. select Emp_name from emp_info where Deptno=20 and Job in (select distinct Job from emp_info where Deptno=10)
+
+[15]. select distinct * from Emp_info where Sal in(select Sal from emp_info where Emp_name in('Ford','Smith'))
+      and Emp_name not in ('Ford,'Smith) Order By Sal Desc;
+
+[16]. SELECT * FROM emp_info WHERE Job IN(SELECT Job FROM emp_info WHERE Emp_name IN ('Smith','Allen'))
+      AND Emp_name NOT IN('Smith','Allen')
+
+[17]. SELECT * FROM emp_info WHERE Deptno=20 AND Job IN(SELECT Job FROM emp_info WHERE Deptno=10)
+
+[18]. SELECT max(Sal) FROM emp_info;
+
+[19]. SELECT * FROM emp_info WHERE Sal IN (SELECT max(Sal) FROM emp_info);
+
+[20]. SELECT SUM(Sal) FROM emp_info WHERE Job='Manager'
+
+[21]. SELECT * FROM emp_info WHERE Emp_name LIKE '%A%'
+
+[22]. SELECT * FROM emp_info WHERE Sal IN (SELECT MIN(Sal) FROM emp_info GROUP BY Job)
+      ORDER BY Sal ASC
+
+[23]. SELECT * FROM Emp_info WHERE Sal>(SELECT Sal FROM emp_info WHERE Emp_name='Blake')
+
+[24]. SELECT Emp_name, Deptno, Job FROM emp_info WHERE Deptno = (SELECT Deptno FROM dept WHERE Loc = 'New York')
+
+[25].-->
+
+
+
+[26]. ALTER TABLE student_info ADD Pin bigint
+
+[27]. ALTER TABLE student_info MODIFY COLUMN Sname varchar(40);
+      CREATE OR REPLACE TRIGGER salarytrigger
+      AFTER INSERT OR UPDATE OR DELETE ON emp_info;
+      FOR EACH ROW
+      DECLARE
+
+      BEGIN
+      UPDATE THEN
+      ACTION = 'update';
+      INSERT INTO emplogtable VALUES(USER,:NEW.New_salary);
+      END
+																																																																																																																																																																																																																																																																																																																																																																																																																						
