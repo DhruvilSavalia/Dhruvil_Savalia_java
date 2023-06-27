@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="student" class="com.model.Model">
+<property name="list1">
+<list>
+<value>1</value>
+<bean id="infoBean" class="com.model.StudentInfo">
+<property name="fname" value="Dhruvil"></property>
+<property name="lname" value="Savalia"></property>
+<property name="email" value="D@gmail.com"></property>
+<property name="mobile" value="12113311"></property>
+</bean>
+</list>
+</property>
+
+<property name="list2">
+<list>
+<value>2</value>
+<bean id="infoBean" class="com.model.StudentInfo">
+<property name="fname" value="Hasti"></property>
+<property name="lname" value="Trambadiya"></property>
+<property name="email" value="Hasti@gmail.com"></property>
+<property name="mobile" value="344333311"></property>
+</bean>
+</list>
+</property>
+
+<property name="list3">
+<list>
+<value>3</value>
+<bean id="infoBean" class="com.model.StudentInfo">
+<property name="fname" value="Aditya"></property>
+<property name="lname" value="Bhuva"></property>
+<property name="email" value="Aditya@gmail.com"></property>
+<property name="mobile" value="311111111"></property>
+</bean>
+</list>
+</property>
+
+<property name="list4">
+<list>
+<value>4</value>
+<bean id="infoBean" class="com.model.StudentInfo">
+<property name="fname" value="Jill"></property>
+<property name="lname" value="Gajera"></property>
+<property name="email" value="Jill@gmail.com"></property>
+<property name="mobile" value="9999999991"></property>
+</bean>
+</list>
+</property>
+
+<property name="list5">
+<list>
+<value>5</value>
+<bean id="infoBean" class="com.model.StudentInfo">
+<property name="fname" value="Siddharth"></property>
+<property name="lname" value="Rabadiya"></property>
+<property name="email" value="S@gmail.com"></property>
+<property name="mobile" value="555555555"></property>
+</bean>
+</list>
+</property>
+
+
+</bean>
+</beans>
